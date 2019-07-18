@@ -12,7 +12,7 @@ func main() {
 	r.Route("/health", func(r chi.Router) {
 		r.Get("/", health())
 	})
-	fmt.Println("Run")
+	fmt.Println("Run APP1")
 	http.ListenAndServe(":8080", r)
 }
 
