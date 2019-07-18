@@ -11,7 +11,7 @@ steps:
   image: golang
   commands:
   - go mod vendor
-  - make build
+  - go build -mod vendor main.go
   - echo -n "auth" > .tags
 
 - name: publish
