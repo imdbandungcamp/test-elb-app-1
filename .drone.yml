@@ -12,7 +12,7 @@ steps:
   commands:
   - go mod vendor
   - go build -mod vendor main.go
-  - echo -n "auth" > .tags
+  - echo -n "app1" > .tags
 
 - name: publish
   pull: always
