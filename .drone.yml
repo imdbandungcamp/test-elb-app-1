@@ -1,0 +1,27 @@
+kind: pipeline
+name: staging
+
+platform:
+  os: linux
+  arch: amd64
+
+steps:
+- name: build
+  pull: always
+  image: golang
+  commands:
+  - go mod vendor
+  - make build
+  - echo -n "auth" > .tags
+
+- name: publish
+  pull: always
+  image: plugins/ecr
+  settings:
+    access_key:
+      from_secret: AWS_ACCESS_KEY_ID
+    secret_key:
+      from_secret: AWS_SECRET_ACCESS_KEY
+    repo: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1
+    registry: 400856814742.dkr.ecr.us-east-2.amazonaws.com
+    region: us-east-2
