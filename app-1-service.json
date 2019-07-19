@@ -1,0 +1,22 @@
+{
+    "kind":"Service",
+    "apiVersion":"v1",
+    "metadata":{
+       "name":"app-1",
+       "labels":{
+          "app":"app-1"
+       }
+    },
+    "spec":{
+       "ports": [
+          {
+            "port":8080,
+            "targetPort":"http-server"
+          }
+       ],
+       "selector":{
+          "app":"app-1"
+       },
+       "type": "LoadBalancer"
+    }
+ }
