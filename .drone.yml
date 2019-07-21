@@ -25,3 +25,15 @@ steps:
     repo: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1
     registry: 400856814742.dkr.ecr.us-east-2.amazonaws.com
     region: us-east-2
+
+- name: deployment
+  image: 400856814742.dkr.ecr.us-east-2.amazonaws.com/drone-eks-plugin:latest
+  settings:
+    iam_role_arn: arn:aws:iam::400856814742:role/eksctl-sirs-stag-cluster-ServiceRole-XVL3IPICVXIB
+    eks_cluster: sirs_tag
+    repo: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1
+    tag: app1
+    namespace: kube-system
+    deployment: app-1
+    container: app-1
+    aws-region: us-east-2
