@@ -36,4 +36,4 @@ steps:
     namespace: default
     deployment: app-1
     container: app-1
-    aws-region: us-east-2
+    aws_region: us-east-2
