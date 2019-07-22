@@ -25,3 +25,18 @@ steps:
     repo: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1
     registry: 400856814742.dkr.ecr.us-east-2.amazonaws.com
     region: us-east-2
+
+- name: deployment
+  image: quay.io/honestbee/drone-kubernetes
+  settings:
+    container: app-1
+    deployment: app-1
+    kubernetes_server: 
+      from_secret: KUBERNETES_SERVER
+    kubernetes_cert:
+      from_secret: KUBERNETES_CERT
+    kubernetes_token:
+      from_secret: KUBERNETES_TOKEN
+    namespace: sirs
+    repo: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1
+    tag: app1
