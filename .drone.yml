@@ -27,13 +27,13 @@ steps:
     region: us-east-2
 
 - name: deployment
-  image: imdglobalservices/drone-eks-plugin:latest
+  image: caian/drone-eks-plugin
   settings:
-    iam_role_arn: arn:aws:iam::400856814742:role/Drone_SIRS_Kubernetes
-    eks_cluster: sirs_tag
-    repo: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1
-    tag: app1
-    namespace: default
-    deployment: app-1
-    container: app-1
+    access_key:
+      from_secret: AWS_ACCESS_KEY_ID
+    secret_key: 
+      from_secret: AWS_SECRET_ACCESS_KEY
+    cluster: arn:aws:eks:us-east-2:400856814742:cluster/sirs-stag
+    node_role: arn:aws:iam::400856814742:role/eksctl-sirs-stag-cluster-ServiceRole-XVL3IPICVXIB
+    manifest: k8s/deployment.yml
     aws_region: us-east-2
