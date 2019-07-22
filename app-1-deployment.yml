@@ -11,7 +11,7 @@ spec:
         app: app-1
     spec:
       containers:
-      - image: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1:latest
+      - image: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1:app1
         imagePullPolicy: Always
         name: app-1
         ports:
