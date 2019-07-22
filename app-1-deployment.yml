@@ -1,0 +1,19 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: app-1
+  namespace: sirs
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        app: app-1
+    spec:
+      containers:
+      - image: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1:latest
+        imagePullPolicy: Always
+        name: app-1
+        ports:
+        - containerPort: 8080
+          protocol: TCP
