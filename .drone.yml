@@ -29,7 +29,7 @@ steps:
 - name: deployment
   image: imdglobalservices/drone-eks-plugin:latest
   settings:
-    iam_role_arn: arn:aws:iam::400856814742:role/Drone_SIRS_Kubernetes
+    iam_role_arn: arn:aws:iam::400856814742:role/eksctl-sirs-stag-nodegroup-standa-NodeInstanceRole-V6JT3183WJVY
     eks_cluster: sirs_tag
     repo: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1
     tag: app1
