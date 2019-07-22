@@ -29,11 +29,11 @@ steps:
 - name: deployment
   image: imdglobalservices/drone-eks-plugin:latest
   settings:
-    iam_role_arn: arn:aws:iam::400856814742:role/eksctl-sirs-stag-nodegroup-standa-NodeInstanceRole-V6JT3183WJVY
+    iam_role_arn: arn:aws:iam::400856814742:role/Drone_SIRS_Kubernetes
     eks_cluster: sirs_tag
     repo: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1
     tag: app1
-    namespace: kube-system
+    namespace: default
     deployment: app-1
     container: app-1
     aws-region: us-east-2
