@@ -12,7 +12,7 @@ steps:
   commands:
   - go mod vendor
   - go build -mod vendor main.go
-  - echo -n "app1" > .tags
+  - echo -n "app11" > .tags
 
 - name: publish
   pull: always
@@ -39,4 +39,4 @@ steps:
       from_secret: KUBERNETES_TOKEN
     namespace: sirs
     repo: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1
-    tag: app1
+    tag: app11
