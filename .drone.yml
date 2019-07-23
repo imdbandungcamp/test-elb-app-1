@@ -12,7 +12,6 @@ steps:
   commands:
   - go mod vendor
   - go build -mod vendor main.go
-  - echo -n "app11" > .tags
 
 - name: publish
   pull: always
@@ -23,6 +22,8 @@ steps:
     secret_key:
       from_secret: AWS_SECRET_ACCESS_KEY
     repo: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1
+    tags:
+      - v${DRONE_BUILD_NUMBER}
     registry: 400856814742.dkr.ecr.us-east-2.amazonaws.com
     region: us-east-2
 
@@ -39,4 +40,4 @@ steps:
       from_secret: KUBERNETES_TOKEN
     namespace: sirs
     repo: 400856814742.dkr.ecr.us-east-2.amazonaws.com/app1
-    tag: app11
+    tag: v${DRONE_BUILD_NUMBER}
